@@ -16,7 +16,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      redirectUri={'http://alfredo-recommends.netlify.com'}
+      redirectUri={'https://alfredo-recommends.tk'}
       onRedirectCallback={onRedirectCallback}
     >
       {children}
