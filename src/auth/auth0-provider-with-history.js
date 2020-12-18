@@ -18,7 +18,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
       // clientId={clientId}
       // redirectUri={'https://alfredo-recommends.tk'}
       domain="alfredo-recommender.us.auth0.com"
-      clientId="IBylyr7Ssb82rggjHjsfiRuY7Pvwsaue"
+      clientId="a1RKvWjERaHud4MiKlcCuR7UyzDT9mqU"
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
     >
