@@ -40,8 +40,8 @@ export default class Dashboard extends React.Component {
   };
 
   searchData = function () {
-    const user =
-      this.props.user === 'david' ? 'ofKDkJKXSKZXu5xJNGiiBQ' : 'david';
+    const user = 'ofKDkJKXSKZXu5xJNGiiBQ';
+    // this.props.user === 'david' ? 'ofKDkJKXSKZXu5xJNGiiBQ' : 'david';
     return new Promise(() => {
       const start = moment.now();
       Data.Search(user).then((businesses) => {
@@ -59,8 +59,8 @@ export default class Dashboard extends React.Component {
   };
 
   measureAccuracy = function () {
-    const user =
-      this.props.user === 'david' ? 'ofKDkJKXSKZXu5xJNGiiBQ' : 'david';
+    const user = 'ofKDkJKXSKZXu5xJNGiiBQ';
+    // this.props.user === 'david' ? 'ofKDkJKXSKZXu5xJNGiiBQ' : 'david';
     return new Promise(() => {
       Accuracy.Accuracy(user).then((accuracy) => {
         this.setState({

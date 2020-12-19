@@ -8,7 +8,6 @@ import {
   Redirect,
   withRouter,
 } from 'react-router-dom';
-import { Home } from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import { Button } from '@material-ui/core';
 
@@ -17,15 +16,7 @@ function AuthExample() {
     <Router>
       <div style={{display: 'flex'}}>
         <AuthButton />
-        <ul>
-          {/* <li>
-            <Link to='/public'>Public Page</Link>
-          </li> */}
-          <li>
-            <Link to='/protected'>Dashboard</Link>
-          </li>
-        </ul>
-        <Route path='/public' component={Home} />
+        <Link to='/protected'>Dashboard</Link>
         <Route path='/login' component={App} />
         <PrivateRoute path='/protected' component={Dashboard} />
       </div>
