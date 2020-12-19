@@ -96,10 +96,13 @@ class App extends React.Component {
   };
 
   render() {
-    // let { from } = this.props.location.state || { from: { pathname: '/' } };
+    let { from } = this.props.location.state || { from: { pathname: '/' } };
     let { redirectToReferrer } = this.state;
 
-    if (redirectToReferrer) return <Redirect to={'/protected'} />;
+    if (redirectToReferrer) {
+      console.log(from);
+      return <Redirect to={from} />;
+    }
 
     return (
       <div style={{ display: 'flex', paddingLeft: 15 }}>
