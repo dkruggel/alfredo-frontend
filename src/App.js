@@ -17,7 +17,9 @@ function AuthExample() {
       <div style={{ display: 'flex' }}>
         <AuthButton />
         <Button>
-          <Link style={{ textDecoration: 'none' }} to='/protected'>Dashboard</Link>
+          <Link style={{ textDecoration: 'none' }} to='/protected'>
+            Dashboard
+          </Link>
         </Button>
         <Route path='/login' component={App} />
         <PrivateRoute path='/protected' component={Dashboard} />
@@ -94,10 +96,10 @@ class App extends React.Component {
   };
 
   render() {
-    let { from } = this.props.location.state || { from: { pathname: '/' } };
+    // let { from } = this.props.location.state || { from: { pathname: '/' } };
     let { redirectToReferrer } = this.state;
 
-    if (redirectToReferrer) return <Redirect to={Dashboard} />;
+    if (redirectToReferrer) return <Redirect to={'/protected'} />;
 
     return (
       <div style={{ display: 'flex', paddingLeft: 15 }}>
