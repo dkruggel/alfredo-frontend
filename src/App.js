@@ -97,7 +97,7 @@ class App extends React.Component {
     let { from } = this.props.location.state || { from: { pathname: '/' } };
     let { redirectToReferrer } = this.state;
 
-    if (redirectToReferrer) return <Redirect to={from} />;
+    if (redirectToReferrer) return <Redirect to={Dashboard} />;
 
     return (
       <div style={{ display: 'flex', paddingLeft: 15 }}>
