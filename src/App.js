@@ -10,18 +10,19 @@ import {
 } from 'react-router-dom';
 import { Home } from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import { Button } from '@material-ui/core';
 
 function AuthExample() {
   return (
     <Router>
-      <div>
+      <div style={{display: 'flex'}}>
         <AuthButton />
         <ul>
-          <li>
+          {/* <li>
             <Link to='/public'>Public Page</Link>
-          </li>
+          </li> */}
           <li>
-            <Link to='/protected'>Protected Page</Link>
+            <Link to='/protected'>Dashboard</Link>
           </li>
         </ul>
         <Route path='/public' component={Home} />
@@ -106,9 +107,9 @@ class App extends React.Component {
     if (redirectToReferrer) return <Redirect to={from} />;
 
     return (
-      <div>
-        <p>You must log in to view this page.</p>
-        <button onClick={this.login}>Log in</button>
+      <div style={{display: 'flex', paddingLeft: 15}}>
+        <p style={{paddingRight: 5}}>You must log in to view this page.</p>
+        <Button onClick={this.login}>Log in</Button>
       </div>
     );
   }
