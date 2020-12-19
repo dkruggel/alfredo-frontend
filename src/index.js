@@ -1,19 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Auth0Provider } from '@auth0/auth0-react';
 import './index.css';
 import App from './App';
+import netlifyIdentity from 'netlify-identity-widget';
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const cliendId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+window.netlifyIdentity = netlifyIdentity;
+netlifyIdentity.init();
 
-ReactDOM.render(
-  <Auth0Provider
-    domain={domain}
-    clientId={cliendId}
-    redirectUri={window.location.origin}
-  >
-    <App />
-  </Auth0Provider>,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
