@@ -1,6 +1,6 @@
 const Accuracy = {
   async Accuracy(user) {
-    return fetch(`https://34.121.66.77:8000/accuracy/`)
+    return fetch(`http://34.121.66.77:8000/accuracy/`)
       .then((response) => {
         return response.json();
       })
