@@ -14,9 +14,11 @@ import { Button } from '@material-ui/core';
 function AuthExample() {
   return (
     <Router>
-      <div style={{display: 'flex'}}>
+      <div style={{ display: 'flex' }}>
         <AuthButton />
-        <Link to='/protected'>Dashboard</Link>
+        <Button>
+          <Link style={{ textDecoration: 'none' }} to='/protected'>Dashboard</Link>
+        </Button>
         <Route path='/login' component={App} />
         <PrivateRoute path='/protected' component={Dashboard} />
       </div>
@@ -49,13 +51,13 @@ const AuthButton = withRouter(({ history }) =>
   netlifyAuth.isAuthenticated ? (
     <p>
       Welcome!{' '}
-      <button
+      <Button
         onClick={() => {
           netlifyAuth.signout(() => history.push('/'));
         }}
       >
         Sign out
-      </button>
+      </Button>
     </p>
   ) : (
     <p>You are not logged in.</p>
@@ -98,8 +100,8 @@ class App extends React.Component {
     if (redirectToReferrer) return <Redirect to={from} />;
 
     return (
-      <div style={{display: 'flex', paddingLeft: 15}}>
-        <p style={{paddingRight: 5}}>You must log in to view this page.</p>
+      <div style={{ display: 'flex', paddingLeft: 15 }}>
+        <p style={{ paddingRight: 5 }}>You must log in to view this page.</p>
         <Button onClick={this.login}>Log in</Button>
       </div>
     );
