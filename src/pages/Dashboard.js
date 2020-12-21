@@ -124,20 +124,12 @@ export default class Dashboard extends React.Component {
   };
 
   searchHandler = function () {
-    this.showLoading()
-      .then(
-        setTimeout(function () {
-          console.log('done');
-        }, (Math.random() * 3 + 8) * 1000)
-      )
-      .then(function () {
-        console.log('done 2');
+    this.showLoading().then(
+      setTimeout(function () {
         this.measureAccuracy();
-      })
-      .then(function () {
-        console.log('done 3');
         this.searchData();
-      });
+      }, (Math.random() * 3 + 8) * 1000)
+    );
   };
 
   render() {
