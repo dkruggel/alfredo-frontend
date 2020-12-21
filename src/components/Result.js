@@ -12,7 +12,7 @@ export default class Result extends React.Component {
               secondary={
                 <>
                   {/* Rating: {this.props.business.rating}&emsp; */}
-                  Categories: {this.props.business.categories}
+                  Categories: {this.props.business[1]}
                 </>
               }
             />
