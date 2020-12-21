@@ -8,7 +8,7 @@ export default class Result extends React.Component {
         <List component='nav'>
           <ListItem button alignItems='flex-start'>
             <ListItemText
-              primary={this.props.business.name}
+              primary={this.props.business[0]}
               secondary={
                 <>
                   {/* Rating: {this.props.business.rating}&emsp; */}
