@@ -130,8 +130,8 @@ export default class Dashboard extends React.Component {
           return null;
         }, (Math.random() * 3 + 8) * 1000)
       )
-      .then(this.measureAccuracy)
-      .then(this.searchData);
+      .then(this.measureAccuracy())
+      .then(this.searchData());
   };
 
   render() {
