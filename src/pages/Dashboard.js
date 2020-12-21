@@ -127,13 +127,15 @@ export default class Dashboard extends React.Component {
     this.showLoading()
       .then(
         setTimeout(function () {
-          return null;
+          console.log('done');
         }, (Math.random() * 3 + 8) * 1000)
       )
       .then(function () {
+        console.log('done 2');
         this.measureAccuracy();
       })
       .then(function () {
+        console.log('done 3');
         this.searchData();
       });
   };
