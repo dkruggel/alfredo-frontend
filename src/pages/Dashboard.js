@@ -78,14 +78,16 @@ export default class Dashboard extends React.Component {
       ],
     ];
 
-    this.setState({
-      businesses: bus,
-      visibility: 'hidden',
-      display: 'none',
-      marginTop: '0',
-      loading: false,
-      queryTime: Math.random() * 3 + 8,
-      user: user,
+    return new Promise(() => {
+      this.setState({
+        businesses: bus,
+        visibility: 'hidden',
+        display: 'none',
+        marginTop: '0',
+        loading: false,
+        queryTime: Math.random() * 3 + 8,
+        user: user,
+      });
     });
     // return new Promise(() => {
     //   const start = moment.now();
@@ -108,9 +110,11 @@ export default class Dashboard extends React.Component {
 
     const rmse = 0.7435626888966831;
     const mae = 1.0451489271625907;
-    this.setState({
-      mae: mae,
-      rmse: rmse,
+    return new Promise(() => {
+      this.setState({
+        mae: mae,
+        rmse: rmse,
+      });
     });
 
     // return new Promise(() => {
@@ -124,13 +128,16 @@ export default class Dashboard extends React.Component {
   };
 
   doStuff = function () {
-    this.measureAccuracy();
-    this.searchData();
-  }
+    return new Promise(() => {
+      return null;
+    });
+  };
 
   searchHandler = function () {
-    this.showLoading();
-    setTimeout(this.doStuff, (Math.random() * 3 + 8) * 1000);
+    this.showLoading()
+      .then(setTimeout(this.doStuff, (Math.random() * 3 + 8) * 1000))
+      .then(this.measureAccuracy())
+      .then(this.searchData());
   };
 
   render() {
