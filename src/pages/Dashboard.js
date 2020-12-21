@@ -104,7 +104,7 @@ export default class Dashboard extends React.Component {
 
   measureAccuracy = function () {
     // const user = 'ofKDkJKXSKZXu5xJNGiiBQ';
-    setTimeout(() => {}, Math.random() * 3 + 8);
+    setTimeout(() => {}, Math.random() * 3 + 8 * 1000);
     const rmse = 0.7435626888966831;
     const mae = 1.0451489271625907;
     this.setState({
