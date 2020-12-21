@@ -1,6 +1,6 @@
 const Data = {
   async Search(user) {
-    return fetch(`https://34.121.66.77:8000/search/`)
+    return fetch(`https://www.alfredo-recommends.ml/search/`)
       .then((response) => {
         return response.json();
       })
