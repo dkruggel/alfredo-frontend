@@ -77,6 +77,7 @@ export default class Dashboard extends React.Component {
         "['Restaurants', 'Cocktail Bars', 'Nightlife', 'Bars', 'American (Traditional)']",
       ],
     ];
+
     this.setState({
       businesses: bus,
       visibility: 'hidden',
@@ -104,14 +105,13 @@ export default class Dashboard extends React.Component {
 
   measureAccuracy = function () {
     // const user = 'ofKDkJKXSKZXu5xJNGiiBQ';
-    setTimeout(() => {
-      const rmse = 0.7435626888966831;
-      const mae = 1.0451489271625907;
-      this.setState({
-        mae: mae,
-        rmse: rmse,
-      });
-    }, (Math.random() * 3 + 8) * 1000);
+
+    const rmse = 0.7435626888966831;
+    const mae = 1.0451489271625907;
+    this.setState({
+      mae: mae,
+      rmse: rmse,
+    });
 
     // return new Promise(() => {
     //   Accuracy.Accuracy(user).then((accuracy) => {
@@ -124,7 +124,13 @@ export default class Dashboard extends React.Component {
   };
 
   searchHandler = function () {
-    this.showLoading().then(this.measureAccuracy()).then(this.searchData());
+    this.showLoading()
+      .then(
+        setTimeout(() => {
+          this.measureAccuracy();
+        }, (Math.random() * 3 + 8) * 1000)
+      )
+      .then(this.searchData());
   };
 
   render() {
