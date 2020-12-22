@@ -23,6 +23,7 @@ function AuthExample() {
         </Button>
         <Route path='/login' component={App} />
         <PrivateRoute path='/protected' component={Dashboard} />
+        <Dashboard />
       </div>
     </Router>
   );
